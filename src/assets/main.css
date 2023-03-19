@@ -1,0 +1,135 @@
+/* @import './base.css'; */
+
+* {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+span {
+  color: black;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+input {
+  padding: 0;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  background-color: white;
+  /* border: none; */
+}
+
+ul, li {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* 
+  LOADING
+*/
+
+.icon-loading {
+  display: inline-block;
+  animation: rotating 2s linear infinite;
+  position: relative;
+}
+
+.is-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.is-loading:before {
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: inherit;
+  background-color: var(--el-mask-color-extra-light);
+}
+
+/* @media (min-width: 1200px) {
+
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1140px;
+} */
+
+/* RESPONSIVE */
+@media screen and (min-width: 320px) {
+  .container {
+    max-width: 250px;
+
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 300px;
+
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+
+
+
+
