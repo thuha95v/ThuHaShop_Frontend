@@ -62,7 +62,7 @@
                     <div class="mt-25 password">
                         <label for="">Nhập lại mật khẩu<span class="required">*</span></label>
                         <input v-if="!showPassword" type="password" placeholder="Nhập lại mật khẩu" v-model="user.re_password">
-                        <input v-else type="text" placeholder="Nhập mật khẩu" v-model="user.re_password">
+                        <input v-else type="text" placeholder="Nhập lại mật khẩu" v-model="user.re_password">
         
                         <el-icon v-if="!showPassword" class="show-password" @click="togglePassword">
                             <View />

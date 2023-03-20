@@ -1,6 +1,5 @@
 .login {
   margin-top: 100px;
-  height: 100vh;
 
   span {
     color: red;
@@ -84,5 +83,19 @@
 
   .icon-loading {
     top: 2px;
+  }
+
+  .forget-password {
+    text-align: end;
+    margin-top: 20px;
+    
+    a{
+      color: black;
+      font-weight: bold;
+
+      &:hover{
+        color: $blue-color;
+      }
+    }
   }
 }

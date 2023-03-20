@@ -32,6 +32,9 @@
                         </el-icon>
                     </div>
         
+                    <div class="forget-password">
+                        <router-link to="/forget-password">Bạn quên mật khẩu?</router-link>
+                    </div>
                     <div>
                         <button v-if="!loading">ĐĂNG NHẬP</button>
                         <button v-else disabled class="is-loading"> <el-icon class="icon-loading"><Loading /></el-icon> Đang xử lý</button>
