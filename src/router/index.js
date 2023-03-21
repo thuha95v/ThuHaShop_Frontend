@@ -2,11 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
 const Home = () => import('@/pages/Home/Home.vue')
 const Login = () => import('@/pages/Login/Login.vue')
+const ForgetPassword = () => import('@/pages/ForgetPassword/ForgetPassword.vue')
+
 const Signup = () => import('@/pages/Signup/Signup.vue')
-
-const Search = () => import('@/pages/Search/Search.vue')
-const Dashboard = () => import('@/pages/Dashboard/Dashboard.vue')
-
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -36,9 +34,9 @@ export const router = createRouter({
       component: Signup
     },
     {
-      path: '/dashboard',
-      name: 'dashboard',
-      component: Dashboard,
+      path: '/forget-password',
+      name: 'forget-password',
+      component: ForgetPassword,
     },
     {
       path: '/logout',
@@ -66,8 +64,8 @@ router.beforeEach(async (to) => {
   const authRequired = !publicPages.includes(to.path);
   const auth = useAuthStore();
 
-  if (authRequired && !auth.user) {
-    auth.returnUrl = to.fullPath;
-    return '/login';
-  }
+  // if (authRequired && !auth.user) {
+  //   auth.returnUrl = to.fullPath;
+  //   return '/login';
+  // }
 });
