@@ -16,12 +16,13 @@ export const useAuthStore = defineStore('auth', {
       this.user = data;
 
 
-      setTimeout(() => {
-        router.push(this.returnUrl || '/dashboard');
-      },300)
+      // setTimeout(() => {
+      //   router.push(this.returnUrl || '/dashboard');
+      // },300)
     },
     logout() {
       this.user = null;
+      localStorage.removeItem('thuha:user');
       router.push('/login');
     }
   }

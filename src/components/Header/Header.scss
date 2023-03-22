@@ -71,18 +71,17 @@
   }
   
   .header-category {
-    li{
+    a{
       padding: 0px 20px;
       font-weight: bold;
-      cursor: pointer;
-
+      color: black;
       &:hover{
         color: $wood-color-hover;
       }
     }
 
-    li:first-child {
-      padding: 0px 20px;
+    a:first-child {
+      padding: 0px 20px 0 0;
     }
 
     

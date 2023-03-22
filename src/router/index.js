@@ -3,6 +3,7 @@ import { useAuthStore } from '../stores/auth'
 const Home = () => import('@/pages/Home/Home.vue')
 const Login = () => import('@/pages/Login/Login.vue')
 const ForgetPassword = () => import('@/pages/ForgetPassword/ForgetPassword.vue')
+const Blog = () => import('@/pages/Blog/Blog.vue')
 
 const Signup = () => import('@/pages/Signup/Signup.vue')
 
@@ -37,6 +38,11 @@ export const router = createRouter({
       path: '/forget-password',
       name: 'forget-password',
       component: ForgetPassword,
+    },
+    {
+      path: '/tin-tuc',
+      name: 'tin-tuc',
+      component: Blog
     },
     {
       path: '/logout',

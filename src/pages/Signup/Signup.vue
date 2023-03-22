@@ -121,12 +121,13 @@
         loading.value = true;
         try {
             await api.post("/api/v1/auth/register", user)
-            ElMessage({
+            ElNotification({
+                title: 'Thành công',
                 message: 'Đăng ký thành công.',
                 type: 'success',
             })
         } catch (error) {
-            console.log(error.response);
+            console.log(error);
             ElNotification({
                 title: 'Thất bại',
                 message: error.response.data.message,

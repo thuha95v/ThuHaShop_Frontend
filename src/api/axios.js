@@ -31,7 +31,13 @@ const get = async(url , options) => {
 
 const post = async (url, body) => {
     const headers = authHeader(url)
-    return (await httpClient.post(url, body, { headers })).data
+    let data = await httpClient.post(url, body, { headers })
+
+    if(data.status !== 201){
+        return data.data
+    }
+    // console.log('axios',data);
+    // return ()
 }
 
 function authHeader(url) {
