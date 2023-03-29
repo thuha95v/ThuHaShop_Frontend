@@ -12,18 +12,18 @@
 
         <div class="container">
             <el-row :gutter="0" style="width: 100%;">
-                <el-col :xs="2" :sm="5" :md="7" :lg="8" :xl="8" v-for="item in arr">
+                <el-col :xs="2" :sm="5" :md="7" :lg="8" :xl="8" v-for="post in posts.data" :key="post.id">
                     <div class="blog-item">
                         <div>
                             <img src="https://i.ytimg.com/vi/wFNQj0bWQl4/maxresdefault.jpg" alt="">
-                            <span class="item-tag">Sale 08/03</span>
+                            <span class="item-tag">{{ post.tags[0] }}</span>
 
-                            <p class="item-title">Giảm giá 80% giá kim cương nhân ngày 08/03</p>
+                            <p class="item-title">{{ post.title }}</p>
 
                             <p class="item-desc">The first line of lorem Ipsum: "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
 
                             <div class="item-info">
-                                <div><el-icon><Calendar /></el-icon> 23/12/2023</div>
+                                <div><el-icon><Calendar /></el-icon> {{ post.createdAt }}</div>
                                 <div>Xem thêm</div>
                             </div>
                         </div>
@@ -34,8 +34,7 @@
 
 
         <div class="container pagination">
-            <el-pagination background layout="prev, pager, next" :total="1000" />
-
+            <el-pagination background layout="prev, pager, next" :total="posts.total" />
         </div>
 
     </div>
@@ -44,13 +43,22 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue';
+import { reactive, ref, onMounted } from 'vue';
 import { ElNotification } from 'element-plus'
+import api from '@/api/axios'
+
 import Header from '@/components/Header/Header.vue';
 import Footer from '@/components/Footer/Footer.vue';
-const loading = ref(false)
 
-let arr = ref([1,2,3,4,5,6])
+let posts = reactive({
+    data: [],
+    total: 0,
+})
+
+onMounted(async() => {
+    let data = await api.get("/api/v1/posts")
+    Object.assign(posts, data)
+})
 </script>
 
 <style lang="scss" src="./Blog.scss" ></style>

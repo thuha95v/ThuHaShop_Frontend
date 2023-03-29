@@ -65,11 +65,11 @@
 import { onBeforeMount, ref } from "vue"
 import api from '@/api/axios'
 let categories = ref([])
-let categoryLocalStorage = localStorage.getItem('thuha:categories');
+// let categoryLocalStorage = localStorage.getItem('thuha:categories');
 
 const getCategories = async () => {
     let data = await api.get("/api/v1/categories")
-    localStorage.setItem('thuha:categories', JSON.stringify(data.data));
+    // localStorage.setItem('thuha:categories', JSON.stringify(data.data));
     categories.value = data.data
 }
 

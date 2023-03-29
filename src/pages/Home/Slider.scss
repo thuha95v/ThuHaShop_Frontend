@@ -1,0 +1,54 @@
+.slider {
+  .slider-item {
+    height: 520px;
+    background-image: url("@/assets/slider/01.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    padding-left: 300px;
+    padding-top: 150px;
+    box-sizing: border-box;
+
+    h4 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+    .slider-price {
+      font-weight: bold;
+      font-size: 40px;
+    }
+
+    a{
+      display: inline-block;
+      margin-top: 5px;
+      border: 2px solid black;
+      padding: 12px 45px;
+
+      color: black;
+      border-radius: 5px;
+      font-weight: bold;
+
+      &:hover {
+        color: white;
+        background-color: $wood-color;
+        border: 2px solid $wood-color;
+      }
+    }
+  }
+  
+  .swiper-pagination-bullet{
+    background: black;
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active {
+    background: $wood-color;
+    padding: 1px;
+    transform: translateY(1px);
+
+  }
+
+}
