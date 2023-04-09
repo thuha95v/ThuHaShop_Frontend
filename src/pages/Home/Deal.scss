@@ -16,7 +16,6 @@
     position: relative;
     justify-content: space-between;
     align-items: center;
-
     h4 {
       padding-right: 20px;
     }
@@ -56,10 +55,29 @@
     z-index: 1;
   }
 
+  .swiper{
+    padding-bottom: 50px;
+    transform: translateY(50px);
+    margin-top: -50px;
+  }
+
   .hot-slider-item{
+    transition: all 0.4s ease-out 0s;
+    background: #fff none repeat scroll 0 0;
     text-align: center;
     margin: 10px 3px;
-    box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+
+    &:hover .slider-item-icon{
+      opacity: 1;
+      margin-top: -10px;
+    }
+
+    &:hover{
+      margin-bottom: -492px;
+      box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+    }
+
     span{
       font-size: 15px;
       color: #555;
@@ -68,14 +86,23 @@
     h4{
       margin-top: 10px;
       font-size: 20px;
+
+      &:hover{
+        color: $wood-color;
+      }
     }
 
     p{
       font-size: 18px;
     }
+
     .slider-item-icon{
+      transition: all 0.3s ease-out 0s;
+      opacity: 0;
       align-items: center;
       justify-content: center;
+      margin-top: -50px;
+
       i{
         padding: 10px;
         background-color: #eef0f1;

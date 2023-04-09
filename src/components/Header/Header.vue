@@ -62,29 +62,16 @@
 <style lang="scss" src="./Header.scss"></style>
 
 <script setup>
-import { onBeforeMount, ref } from "vue"
-import api from '@/api/axios'
-let categories = ref([])
-// let categoryLocalStorage = localStorage.getItem('thuha:categories');
+import { onBeforeMount, computed } from "vue"
 
-const getCategories = async () => {
-    let data = await api.get("/api/v1/categories")
-    // localStorage.setItem('thuha:categories', JSON.stringify(data.data));
-    categories.value = data.data
-}
+import { useCategoryStore } from '@/stores/category';
+let store = useCategoryStore();
 
-// const checkDiff = (data) => {
-
-// }
-// if(!categoryLocalStorage){
-//     getCategories()
-// }
-// else {
-//     categories.value = JSON.parse(categoryLocalStorage)
-
-// }
+let categories = computed(() => store.getCategories)
 
 onBeforeMount(() => {
-    getCategories()
+    if(store.categories.length == 0){
+        store.callAPICategories();
+    }
 })
 </script>
