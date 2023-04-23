@@ -1,0 +1,92 @@
+.footer {
+  background-color: #f6f7f7;
+  margin-top: 50px;
+  padding-top: 40px;
+  
+  .footer-service{
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e2e2e2;
+
+    div{
+      border-right: 1px solid #e2e2e2;
+    }
+
+    div:last-child{
+      border: none;
+    }
+
+    p{
+      color: #555252;
+    }
+  }
+
+  .footer-about{
+    margin-top: 40px;
+    padding: 30px 0;
+    .about-information{
+      margin-top: 30px;
+      p{
+        margin: 10px 0;
+      }
+    }
+  }
+
+  .list-infomation{
+    padding-left: 30px;
+    li{
+      padding-top: 16px;
+
+      &:hover{
+        color: $wood-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .subscribe-email{
+    input{
+      padding: 18px 0px;
+      padding-left: 15px;
+      margin-top: 8px;
+      border: 1px solid transparent;
+      border-bottom: 1px solid #EDEDED;
+      width: 100%;
+      box-sizing: border-box;
+
+      &:focus-visible{
+        border: 1px solid #574b4b;
+      }
+    }
+
+    button{
+      margin-top: 20px;
+      width: 100%;
+      padding: 18px 0;
+      border-radius: 6px;
+      background-color: #aa8d74;
+      border: 1.5px solid transparent;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+
+      &:hover{
+        background-color: #242424;
+      }
+    }
+  }
+
+  .footer-copyright{
+    padding: 10px 0;
+    background-color: white;
+
+    div {
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    img{
+      height: 28px;
+    }
+  }
+}

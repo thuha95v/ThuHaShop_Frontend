@@ -4,8 +4,8 @@ const Home = () => import('@/pages/Home/Home.vue')
 const Login = () => import('@/pages/Login/Login.vue')
 const ForgetPassword = () => import('@/pages/ForgetPassword/ForgetPassword.vue')
 const Blog = () => import('@/pages/Blog/Blog.vue')
-
 const Signup = () => import('@/pages/Signup/Signup.vue')
+const ListProduct = () => import('@/pages/ListProduct/ListProduct.vue')
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +14,11 @@ export const router = createRouter({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: "/p/:slug",
+      name: "list-product",
+      component: ListProduct
     },
     {
       path: '/login',

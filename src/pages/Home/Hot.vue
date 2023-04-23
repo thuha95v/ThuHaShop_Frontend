@@ -156,8 +156,8 @@
 </template>
 
 <script setup>
-import { Swiper, SwiperSlide, useSwiper } from "swiper/vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper";
 const modules = [Navigation];
 </script>
-<style src="./Deal.scss"></style>
+<style src="./Hot.scss"></style>

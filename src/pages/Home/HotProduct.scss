@@ -1,0 +1,142 @@
+#app {
+  height: 100%;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+.new-product{
+  height: 100%;
+
+  .deal-hot {
+    // margin-top: 20px;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      padding-right: 20px;
+    }
+
+    .hot-button{
+      padding-left: 20px;
+
+      i{
+        padding: 10px;
+        background-color: #efefef;
+        margin-right: 5px;
+        border-radius: 3px;
+
+        &:hover{
+          color: white;
+          background-color: $wood-color;
+        }
+      }
+    }
+
+    .hot-button, h3{
+      background-color: white;
+      overflow: hidden;
+      z-index: 2;
+    }
+  }
+
+  .deal-hot::before{
+    background-color: #eeeeee;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 20px;
+    transition: all 0.4s ease 0s;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .hot-slider-item{
+    text-align: center;
+    margin: 10px 3px;
+    // box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+
+    &:hover .slider-item-icon{
+      opacity: 1;
+      margin-top: -10px;
+    }
+
+    &:hover{
+      box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+    }
+
+    span{
+      font-size: 15px;
+      color: #555;
+    }
+
+    h4{
+      margin-top: 10px;
+      font-size: 20px;
+    
+      &:hover{
+        color: $wood-color;
+      }
+    }
+    
+
+    p{
+      font-size: 18px;
+    }
+    .slider-item-icon{
+      transition: all 0.3s ease-out 0s;
+      opacity: 0;
+      align-items: center;
+      justify-content: center;
+      margin-top: -50px;
+
+      i{
+        padding: 10px;
+        background-color: #eef0f1;
+        border-radius: 5px;
+      }
+
+      p{
+        font-weight: bold;
+        padding: 10px 8px;
+        border-radius: 5px;
+        margin-left: 10px;
+        font-size: 16px;
+        background-color: #eef0f1;
+      }
+
+      i:hover, p:hover{
+        color: white;
+        background-color: $wood-color;
+      }
+    }
+  }
+
+  .new-slider {
+    height: 100%;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: calc((100% - 100px) / 2) !important;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

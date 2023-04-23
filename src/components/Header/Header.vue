@@ -41,7 +41,7 @@
         <div class="container header-category">
             <ul class="flex">
                 <router-link to="/">Trang chủ</router-link>
-                <router-link v-for="category in categories" :to="category.slug">{{ category.name }}</router-link>
+                <router-link v-for="category in categories" :to="handlerSlug(category.slug)">{{ category.name }}</router-link>
             </ul>
         </div>
 
@@ -69,6 +69,10 @@ let store = useCategoryStore();
 
 let categories = computed(() => store.getCategories)
 
+const handlerSlug = (slug) => {
+    if(slug === "tin-tuc") return "/tin-tuc";
+    else return `/p/${slug}`
+}
 onBeforeMount(() => {
     if(store.categories.length == 0){
         store.callAPICategories();
