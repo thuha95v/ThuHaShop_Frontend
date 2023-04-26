@@ -13,19 +13,36 @@
         <div class="container">
             <el-row :gutter="0" style="width: 100%;">
                 <el-col :xs="2" :sm="5" :md="7" :lg="8" :xl="8" v-for="post in posts.data" :key="post.id">
-                    <div class="blog-item">
+                    <div class="blog-item" >
                         <div>
-                            <img :src="post.thumbnail" alt="">
-                            <span class="item-tag">{{ JSON.parse(post.tags)[0] }}</span>
+                            <el-skeleton style="width: 240px" :loading="loading" animated>
+                                <template #template>
+                                    <el-skeleton-item variant="image" style="width: 240px; height: 240px" />
+                                    <div style="padding: 14px;">
+                                        <el-skeleton-item variant="p" style="width: 50%" />
+                                        <div tyle="display: flex; align-items: center; justify-items: space-between;">
+                                        <el-skeleton-item variant="text" style="margin-right: 16px" />
+                                        <el-skeleton-item variant="text" style="width: 30%" />
+                                        </div>
+                                    </div>
+                                </template>
 
-                            <p class="item-title">{{ post.title }}</p>
+                                <template #default>
+                                    <img :src="post.thumbnail" alt="">
+                                    <span class="item-tag">{{ JSON.parse(post.tags)[0] }}</span>
 
-                            <p class="item-desc">{{ post.short_desc }}</p>
+                                    <p class="item-title">{{ post.title }}</p>
 
-                            <div class="item-info">
-                                <div><el-icon><Calendar /></el-icon> {{ format(post.createdAt) }}</div>
-                                <div>Xem thêm</div>
-                            </div>
+                                    <p class="item-desc">{{ post.short_desc }}</p>
+
+                                    <div class="item-info">
+                                        <div><el-icon><Calendar /></el-icon> {{ format(post.createdAt) }}</div>
+                                        <div><router-link to="/tin-tuc/hello">
+                                            Xem thêm
+                                        </router-link></div>
+                                    </div>
+                                </template>
+                            </el-skeleton>
                         </div>
                     </div>
                 </el-col>
@@ -33,13 +50,13 @@
         </div>
 
 
-        <div class="container pagination">
+        <div class="container pagination" v-if="!loading">
             <el-pagination background layout="prev, pager, next" :total="posts.total" />
         </div>
 
     </div>
 
-    <!-- <Footer /> -->
+    <Footer />
 </template>
 
 <script setup>
@@ -52,13 +69,18 @@ import Header from '@/components/Header/Header.vue';
 import Footer from '@/components/Footer/Footer.vue';
 
 let posts = reactive({
-    data: [],
+    data: [{},{},{}],
     total: 0,
 })
 
+let loading = ref(true)
+
 onMounted(async() => {
     let data = await api.get("/api/v1/posts")
-    Object.assign(posts, data)
+    setTimeout(() => {
+        Object.assign(posts, data)
+        loading.value = false;
+    },400)
 })
 </script>
 

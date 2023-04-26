@@ -70,9 +70,11 @@ let store = useCategoryStore();
 let categories = computed(() => store.getCategories)
 
 const handlerSlug = (slug) => {
-    if(slug === "tin-tuc") return "/tin-tuc";
-    else return `/p/${slug}`
+    if(slug === "tin-tuc") return { name: "blog" };
+    
+    return { name: "list-product", params: { slug } }
 }
+
 onBeforeMount(() => {
     if(store.categories.length == 0){
         store.callAPICategories();

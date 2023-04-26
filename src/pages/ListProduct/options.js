@@ -20,19 +20,19 @@ export const metalOptions = [
 export const colorOptions = [
   {
     value: "Vàng",
-    label: "Vàng"
+    label: "Màu vàng"
   },
   {
     value: "Hồng",
-    label: "Hồng"
+    label: "Màu Hồng"
   },
   {
     value: "Trắng",
-    label: "Trắng"
+    label: "Màu Trắng"
   },
   {
     value: "Đen",
-    label: "Đen"
+    label: "Màu Đen"
   }
 ]
 

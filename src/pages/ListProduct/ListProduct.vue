@@ -75,7 +75,7 @@
           <div class="hot-slider-item">
             <img src="@/assets/product/01.webp" alt="" srcset="" />
             <span>Trang sức bạc</span>
-            <h4>Cái chổi luxury</h4>
+            <h4 @click="redirect">Cái chổi luxury</h4>
             <p>$50.000</p>
 
             <div class="flex slider-item-icon">
@@ -89,7 +89,7 @@
           <div class="hot-slider-item">
             <img src="@/assets/product/02.webp" alt="" srcset="" />
             <span>Trang sức bạc</span>
-            <h4>Cái ghế luxury</h4>
+            <h4 @click="redirect">Cái ghế luxury</h4>
             <p>$50.000</p>
 
             <div class="flex slider-item-icon">
@@ -103,7 +103,7 @@
           <div class="hot-slider-item">
             <img src="@/assets/product/03.webp" alt="" srcset="" />
             <span>Trang sức bạc</span>
-            <h4>Cái sao luxury</h4>
+            <h4 @click="redirect">Cái sao luxury</h4>
             <p>$50.000</p>
 
             <div class="flex slider-item-icon">
@@ -117,7 +117,7 @@
           <div class="hot-slider-item">
             <img src="@/assets/product/04.webp" alt="" srcset="" />
             <span>Trang sức bạc</span>
-            <h4>Cái tròn luxury</h4>
+            <h4 @click="redirect">Cái tròn luxury</h4>
             <p>$50.000</p>
 
             <div class="flex slider-item-icon">
@@ -259,6 +259,7 @@ import { StarFilled } from '@element-plus/icons-vue'
 
 import Header from '@/components/Header/Header.vue';
 import Footer from '@/components/Footer/Footer.vue';
+import { router } from '@/router'
 
 import { metalOptions, colorOptions, limitedOptions, sortOptions, styleOptions } from './options'
 
@@ -271,6 +272,10 @@ const data = reactive({
 })
 
 const value = ref([0, 50000000])
+
+const redirect = () => {
+  router.push('/san-pham/test');
+}
 
 const formatPriceRange = computed(() => {
   return [`${value.value[0]} VNĐ`, `${value.value[1]} VNĐ`]

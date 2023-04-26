@@ -4,8 +4,10 @@ const Home = () => import('@/pages/Home/Home.vue')
 const Login = () => import('@/pages/Login/Login.vue')
 const ForgetPassword = () => import('@/pages/ForgetPassword/ForgetPassword.vue')
 const Blog = () => import('@/pages/Blog/Blog.vue')
+const BlogDetail = () => import('@/pages/BlogDetail/BlogDetail.vue')
 const Signup = () => import('@/pages/Signup/Signup.vue')
 const ListProduct = () => import('@/pages/ListProduct/ListProduct.vue')
+const ProductDetail = () => import('@/pages/ProductDetail/ProductDetail.vue')
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,9 +18,14 @@ export const router = createRouter({
       component: Home
     },
     {
-      path: "/p/:slug",
+      path: "/:slug",
       name: "list-product",
       component: ListProduct
+    },
+    {
+      path: "/san-pham/:slug",
+      name: "product-detail",
+      component: ProductDetail
     },
     {
       path: '/login',
@@ -46,8 +53,13 @@ export const router = createRouter({
     },
     {
       path: '/tin-tuc',
-      name: 'tin-tuc',
+      name: 'blog',
       component: Blog
+    },
+    {
+      path: '/tin-tuc/:slug',
+      name: 'blog-detail',
+      component: BlogDetail
     },
     {
       path: '/logout',
@@ -67,6 +79,8 @@ export const router = createRouter({
         top: 80
       }
     }
+
+    return { top: 0 }
   }
 })
 
