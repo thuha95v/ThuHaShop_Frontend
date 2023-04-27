@@ -1,5 +1,5 @@
-.product-detail{
-  .product-image{
+.product-detail {
+  .product-image {
     border: 1px solid #ebebeb;
     margin-top: 30px;
     img {
@@ -7,32 +7,58 @@
     }
   }
 
-  .product-information{
+  .slider-item {
+    text-align: center;
+    img {
+      display: inline-block;
+      width: 90px;
+      // margin: 0 auto;
+    }
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: unset;
+    color: $wood-color;
+    font-weight: bold;
+  }
+
+  .swiper-button-next,
+  .swiper-rtl .swiper-button-prev {
+    right: 3px;
+  }
+
+  .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
+    left: 3px;
+  }
+
+  .product-information {
     margin: 30px 0 0 20px;
 
     h1 {
       margin-top: 20px;
     }
 
-    .product-rate{
+    .product-rate {
       display: flex;
       align-items: center;
-  
-      p{
+
+      p {
         margin-left: 10px;
         color: #f7ba2a;
         font-weight: bold;
       }
     }
 
-    .product-func{
+    .product-func {
       align-items: center;
-  
-      p{
+
+      p {
         margin: 0;
       }
-  
-      input{
+
+      input {
         width: 40px;
         padding: 12px 5px;
         margin-left: 10px;
@@ -40,33 +66,167 @@
         text-align: center;
         // font-weight: bold;
       }
-  
-      .btn-cart{
+
+      .btn-cart {
         font-weight: bold;
         padding: 14px 8px;
         border-radius: 5px;
         margin-left: 10px;
-        
+
         font-size: 16px;
         background-color: #eef0f1;
         cursor: pointer;
-  
-        &:hover{
+
+        &:hover {
           background-color: $wood-color;
           color: white;
         }
       }
-  
-      .btn-favourite{
-        padding: 14px 14px;
+
+      .btn-favourite {
+        padding: 12px 14px;
         border-radius: 5px;
         background-color: #eef0f1;
         margin-left: 10px;
         cursor: pointer;
-  
-        &:hover{
+
+        &:hover {
           background-color: $wood-color;
           color: white;
+        }
+      }
+    }
+  }
+
+  .desc-tabs {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .el-tabs__item.is-top {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .el-tabs__nav.is-top {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .related-product {
+    margin-top: 40px;
+    .deal-hot {
+      margin-top: 40px;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+
+      h4 {
+        padding-right: 20px;
+      }
+  
+      .hot-button{
+        padding-left: 20px;
+  
+        i{
+          padding: 10px;
+          background-color: #efefef;
+          margin-right: 5px;
+          border-radius: 3px;
+  
+          &:hover{
+            color: white;
+            background-color: $wood-color;
+          }
+        }
+      }
+  
+      .hot-button, h3{
+        background-color: white;
+        overflow: hidden;
+        z-index: 2;
+      }
+
+      &::before{
+        background-color: #eeeeee;
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        top: 20px;
+        transition: all 0.4s ease 0s;
+        width: 100%;
+        z-index: 1;
+      }
+    }
+
+    .swiper{
+      padding-bottom: 50px;
+      transform: translateY(50px);
+      margin-top: -50px;
+    }
+
+    .hot-slider-item{
+      transition: all 0.4s ease-out 0s;
+      background: #fff none repeat scroll 0 0;
+      text-align: center;
+      margin: 10px 3px;
+      box-sizing: border-box;
+  
+      &:hover .slider-item-icon{
+        opacity: 1;
+        margin-top: -10px;
+      }
+  
+      &:hover{
+        margin-bottom: -492px;
+        box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+      }
+  
+      span{
+        font-size: 15px;
+        color: #555;
+      }
+  
+      h4{
+        margin-top: 10px;
+        font-size: 20px;
+  
+        &:hover{
+          color: $wood-color;
+        }
+      }
+  
+      p{
+        font-size: 18px;
+      }
+  
+      .slider-item-icon{
+        transition: all 0.3s ease-out 0s;
+        opacity: 0;
+        align-items: center;
+        justify-content: center;
+        margin-top: -50px;
+  
+        i{
+          padding: 10px;
+          background-color: #eef0f1;
+          border-radius: 5px;
+        }
+  
+        p{
+          font-weight: bold;
+          padding: 10px 15px;
+          border-radius: 5px;
+          margin-left: 10px;
+          font-size: 16px;
+          background-color: #eef0f1;
+        }
+  
+        i:hover, p:hover{
+          color: white;
+          background-color: $wood-color;
         }
       }
     }
