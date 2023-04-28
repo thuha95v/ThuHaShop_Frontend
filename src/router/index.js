@@ -8,6 +8,7 @@ const BlogDetail = () => import('@/pages/BlogDetail/BlogDetail.vue')
 const Signup = () => import('@/pages/Signup/Signup.vue')
 const ListProduct = () => import('@/pages/ListProduct/ListProduct.vue')
 const ProductDetail = () => import('@/pages/ProductDetail/ProductDetail.vue')
+const Cart = () => import('@/pages/Cart/Cart.vue')
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -60,6 +61,11 @@ export const router = createRouter({
       path: '/tin-tuc/:slug',
       name: 'blog-detail',
       component: BlogDetail
+    },
+    {
+      path: '/gio-hang',
+      name: 'cart',
+      component: Cart
     },
     {
       path: '/logout',

@@ -1,0 +1,268 @@
+.cart {
+  .cart-title {
+    margin-top: 20px;
+  }
+
+  tbody, td, tfoot, th, thead, tr{
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+  }
+
+  table {
+    margin-top: 20px;
+    width: 100%;
+    caption-side: bottom;
+    border-collapse: collapse;
+
+    thead {
+      tr {
+        background-color: #f9f9f9;
+        border: 1px solid #ebebeb;
+
+        th {
+          border-top: medium none;
+          color: #363f4d;
+          // font-size: 12px;
+          // font-weight: 500;
+          padding: 21px 45px 22px;
+          text-align: center;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    tbody{
+      tr{
+        border-bottom: 1px solid #ebebeb;
+
+        td{
+          color: #242424;
+          font-size: 14px;
+          padding: 30px 0;
+          text-align: center;
+          font-size: 15px;
+          font-weight: bold;
+
+          input{
+            background: transparent none repeat scroll 0 0;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            color: #242424;
+            height: 42px;
+            padding: 0;
+            text-align: center;
+            width: 94px;
+          }
+        }
+      }
+    }
+  }
+
+  .cart-btn{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px 55px;
+
+    div{
+      background-color: #f2f2f2;
+      border-radius: 3px;
+      color: #363f4d;
+      display: inline-block;
+      font-size: 15px;
+
+      font-weight: bold;
+      line-height: 1;
+      padding: 18px 63px 19px;
+      cursor: pointer;
+      &:hover {
+        background-color: #047afe;
+        color: #fff;
+      }
+    }
+  }
+
+  .cart-tax{
+    .title-wrap{
+      position: relative;
+      &::before{
+        background-color: #ebebeb;
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        top: 10px;
+        transition: all 0.4s ease 0s;
+        width: 100%;
+        z-index: 1;
+      }
+
+      h4{
+        display: inline-block;
+        font-size: 18px;
+        margin: 0;
+        padding-right: 18px;
+      }
+    }
+
+    .tax-wrapper{
+      margin-top: 22px;
+      .tax-select-wrapper{
+        margin: 1px 0 0;
+
+        .tax-select{
+          margin: 0 0 26px;
+          box-sizing: border-box;
+          label{
+            color: #242424;
+            font-size: 14px;
+            margin: 0 0 12px;
+          }
+          
+          input{
+            background: transparent none repeat scroll 0 0;
+            border: 1px solid #ebebeb;
+            height: 40px;
+            box-shadow: none;
+            padding-left: 10px;
+            font-size: 14px;
+            color: #626262;
+            width: 100%;
+            box-sizing: border-box;
+          }
+
+          textarea{
+            background: transparent none repeat scroll 0 0;
+            border: 1px solid #ebebeb;
+            box-shadow: none;
+            padding-left: 5px;
+            font-size: 14px;
+            color: #626262;
+            width: 100%;
+            box-sizing: border-box;
+          }
+
+          select{
+            -webkit-appearance: none;
+            background: #fff url("https://htmldemo.net/devita/devita/assets/img/icon-img/cart.png") no-repeat scroll right 18px center;
+            border: 1px solid #ebebeb;
+            box-shadow: none;
+            color: #242424;
+            font-size: 12px;
+            height: 40px;
+            padding: 0 50px 0 15px;
+            width: 100%;
+            cursor: pointer;
+          }
+
+          option{
+            background: #fff;
+            border: 0px solid #626262;
+            padding-left: 10px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .section-bg-white{
+    background-color: #fff;
+    position: relative;
+    z-index: 9;
+  }
+
+  .grand-totall{
+    background-color: #f9f9f9;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    padding: 45px 30px 50px;
+
+    .title-wrap{
+      position: relative;
+      &::before{
+        background-color: #ebebeb;
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        top: 10px;
+        transition: all 0.4s ease 0s;
+        width: 100%;
+        z-index: 1;
+      }
+
+      h4{
+        display: inline-block;
+        font-size: 20px;
+        margin: 0;
+        padding-right: 18px;
+
+        background-color: #f9f9f9;
+        position: relative;
+        z-index: 9;
+      }
+    }
+
+    h5{
+      font-size: 16px;
+      margin: 36px 0 27px;
+    }
+
+    .total-shipping{
+      border-bottom: 1px solid #ebebeb;
+      border-top: 1px solid #ebebeb;
+      margin: 0 0 27px;
+      padding: 28px 0;
+
+      h5{
+        font-size: 16px;
+        margin: 0;
+      }
+
+      ul{
+        padding: 19px 0 0 40px;
+      }
+
+      li{
+        color: #242424;
+        list-style: outside none none;
+        margin: 0 0 6px;
+      }
+    }
+
+    span{
+      float: right;
+    }
+
+    .grand-totall-title{
+      color: #047afe;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 0 25px;
+
+      span{
+        float: right;
+        color: #047afe;
+      }
+    }
+
+    a{
+      background-color: #047afe;
+      border-radius: 3px;
+      color: #fff;
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 1;
+      padding: 18px 10px 19px;
+      text-align: center;
+      text-transform: uppercase;
+
+      &:hover{
+        background-color: #242424
+      }
+    }
+  }
+}

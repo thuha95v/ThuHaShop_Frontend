@@ -83,7 +83,7 @@
         <el-tabs v-model="activeName" class="desc-tabs" @tab-click="handleClick">
           <el-tab-pane label="Mô tả" name="first">Mô tả nè</el-tab-pane>
           <el-tab-pane label="Đánh giá" name="third">Đánh giá nè</el-tab-pane>
-          <el-tab-pane label="Thể loại" name="second">thể loại nè</el-tab-pane>
+          <!-- <el-tab-pane label="Thể loại" name="second">thể loại nè</el-tab-pane> -->
         </el-tabs>
       </el-col>
     </el-row>
