@@ -2,13 +2,14 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
 const Home = () => import('@/pages/Home/Home.vue')
 const Login = () => import('@/pages/Login/Login.vue')
-const ForgetPassword = () => import('@/pages/ForgetPassword/ForgetPassword.vue')
 const Blog = () => import('@/pages/Blog/Blog.vue')
-const BlogDetail = () => import('@/pages/BlogDetail/BlogDetail.vue')
+const Cart = () => import('@/pages/Cart/Cart.vue')
 const Signup = () => import('@/pages/Signup/Signup.vue')
+const Profile = () => import('@/pages/Profile/Profile.vue')
+const BlogDetail = () => import('@/pages/BlogDetail/BlogDetail.vue')
 const ListProduct = () => import('@/pages/ListProduct/ListProduct.vue')
 const ProductDetail = () => import('@/pages/ProductDetail/ProductDetail.vue')
-const Cart = () => import('@/pages/Cart/Cart.vue')
+const ForgetPassword = () => import('@/pages/ForgetPassword/ForgetPassword.vue')
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,9 +35,8 @@ export const router = createRouter({
       component: Login,
       beforeEnter: () => {
         const auth = useAuthStore();
-
         if(auth.user){
-          return { path: "/dashboard", query: {}, hash: '' }
+          return { path: "/profile", query: {}, hash: '' }
         }
 
         return true;
@@ -66,6 +66,11 @@ export const router = createRouter({
       path: '/gio-hang',
       name: 'cart',
       component: Cart
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: Profile
     },
     {
       path: '/logout',

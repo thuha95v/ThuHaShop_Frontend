@@ -90,6 +90,11 @@
                 <label> Địa chỉ </label>
                 <input type="text" />
               </div>
+
+              <div class="tax-select">
+                <label>Email</label>
+                <input type="text" />
+              </div>
             </div>
           </div>
         </div>

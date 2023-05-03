@@ -5,20 +5,20 @@ import { router } from '../router'
 export const useAuthStore = defineStore('auth', {
   state: () => {
     return {
-      user: JSON.parse(localStorage.getItem('thuha:user')),
+      user: JSON.parse(localStorage.getItem('hit:user')),
       returnUrl: null
     }
   },
   actions: {
     async login(account, password){
-      const { data } = (await api.post("/api/v1/auth/login", { account, password }))
+      const { tokens }  = (await api.post("/api/v1/auth/login", { account, password }))
+      this.user = tokens;
 
-      this.user = data;
+      localStorage.setItem('thuha:user', JSON.stringify(tokens));
 
-
-      // setTimeout(() => {
-      //   router.push(this.returnUrl || '/dashboard');
-      // },300)
+      setTimeout(() => {
+        router.push(this.returnUrl || '/profile');
+      },300)
     },
     logout() {
       this.user = null;
