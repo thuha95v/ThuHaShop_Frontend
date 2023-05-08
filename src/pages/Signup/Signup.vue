@@ -8,8 +8,8 @@
         
             <el-col :xs="1" :sm="1" :md="1" :lg="10" :xl="1">
                 <div class="flex switch-auth">
-                    <router-link to="/login">Đăng nhập</router-link>
-                    <router-link activeClass="active" to="/signup">Đăng ký</router-link>
+                    <router-link to="/dang-nhap">Đăng nhập</router-link>
+                    <router-link activeClass="active" to="/dang-ky">Đăng ký</router-link>
                 </div>
 
                 <form action="" class="form-login" @submit.prevent="onSubmit">

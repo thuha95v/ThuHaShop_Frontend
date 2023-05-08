@@ -60,7 +60,7 @@
 
 
   .change-info{
-    margin-top: 30px;
+    margin-top: 8px;
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
@@ -113,8 +113,8 @@
       }
 
       &:hover{
-        color: hsl(214, 89%, 52%);
-        border-bottom: 2px solid hsl(214, 89%, 52%);
+        color: $wood-color;
+        border-bottom: 2px solid $wood-color;
       }
     }
    

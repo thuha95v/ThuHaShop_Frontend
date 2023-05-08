@@ -58,6 +58,11 @@
       border: 2px solid #ebebeb;
       // padding: 8px 20px;
   
+      &:hover > .el-icon:first-child {
+        background-color: $wood-color;
+        color: white;
+      }
+
       i{
         border-right: 1px solid #ebebeb;
         padding: 8px 15px;

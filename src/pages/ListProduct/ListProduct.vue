@@ -2,9 +2,11 @@
   <div class="list-product">
     <Header />
     <div class="container flex product-banner">
-      <img src="@/assets/sale/04.webp" alt="" srcset="">
-      <img src="@/assets/sale/05.webp" alt="" srcset="">
-
+      <div class="banner" v-for="banner in banners">
+        <router-link :to="{ path: banner.redirect_link }">
+          <img :src="banner.url" alt="" srcset="">
+        </router-link>
+      </div>
     </div>
     <div class="container product-filter">
       <h4>Lọc theo: </h4>
@@ -73,7 +75,7 @@
       <el-row :gutter="10">
         <el-col :xs="8" :sm="6" :md="4" :lg="6" :xl="1">
           <div class="hot-slider-item">
-            <img src="@/assets/product/01.webp" alt="" srcset="" />
+            <img @click="redirect" src="@/assets/product/01.webp" alt="" srcset="" />
             <span>Trang sức bạc</span>
             <h4 @click="redirect">Cái chổi luxury</h4>
             <p>$50.000</p>
@@ -87,7 +89,7 @@
 
         <el-col :xs="8" :sm="6" :md="4" :lg="6" :xl="1">
           <div class="hot-slider-item">
-            <img src="@/assets/product/02.webp" alt="" srcset="" />
+            <img @click="redirect" src="@/assets/product/02.webp" alt="" srcset="" />
             <span>Trang sức bạc</span>
             <h4 @click="redirect">Cái ghế luxury</h4>
             <p>$50.000</p>
@@ -101,7 +103,7 @@
 
         <el-col :xs="8" :sm="6" :md="4" :lg="6" :xl="1">
           <div class="hot-slider-item">
-            <img src="@/assets/product/03.webp" alt="" srcset="" />
+            <img @click="redirect" src="@/assets/product/03.webp" alt="" srcset="" />
             <span>Trang sức bạc</span>
             <h4 @click="redirect">Cái sao luxury</h4>
             <p>$50.000</p>
@@ -115,7 +117,7 @@
 
         <el-col :xs="8" :sm="6" :md="4" :lg="6" :xl="1">
           <div class="hot-slider-item">
-            <img src="@/assets/product/04.webp" alt="" srcset="" />
+            <img @click="redirect" src="@/assets/product/04.webp" alt="" srcset="" />
             <span>Trang sức bạc</span>
             <h4 @click="redirect">Cái tròn luxury</h4>
             <p>$50.000</p>
@@ -254,12 +256,13 @@
 </template>
 
 <script setup>
-import { reactive, ref, computed } from 'vue'
+import { reactive, ref, computed, onMounted } from 'vue'
 import { StarFilled } from '@element-plus/icons-vue'
 
 import Header from '@/components/Header/Header.vue';
 import Footer from '@/components/Footer/Footer.vue';
 import { router } from '@/router'
+import api from '@/api/axios'
 
 import { metalOptions, colorOptions, limitedOptions, sortOptions, styleOptions } from './options'
 
@@ -279,6 +282,12 @@ const redirect = () => {
 
 const formatPriceRange = computed(() => {
   return [`${value.value[0]} VNĐ`, `${value.value[1]} VNĐ`]
+})
+
+let banners = reactive({})
+onMounted(async() => {
+  let data = await api.get("/api/v1/banners/list-product?type=banner")
+  Object.assign(banners, data.data)
 })
 </script>
 <style src="./ListProduct.scss"></style>

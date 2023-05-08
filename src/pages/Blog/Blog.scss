@@ -34,7 +34,7 @@
       padding: 4px 15px 6px 15px;
       color: white;
       border-radius: 2px;
-      background-color: #0363CD;
+      background-color: $wood-color;
     }
 
     .item-title {
@@ -43,7 +43,7 @@
 
       &:hover{
         cursor: pointer;
-        color: $blue-color;
+        color: $wood-color;
       }
     }
 
@@ -61,15 +61,15 @@
         font-weight: bold;
         color: $blue-color;
         cursor: pointer;
-        &:hover{
-          color: black;
+        a:hover{
+          color: $wood-color;
         }
       }
-
-      a{
-        color: $blue-color;
-      }
     }
+  }
+
+  a{
+    color: black;
   }
 
   .pagination {

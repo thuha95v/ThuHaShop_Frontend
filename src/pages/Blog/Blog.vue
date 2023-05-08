@@ -1,14 +1,14 @@
 <template>
     <Header />
     <div class="blog">
-        <div class="blog-bg">
+        <!-- <div class="blog-bg">
             <div class="container blog-breadcrumb">
                 <el-breadcrumb separator="/">
                     <el-breadcrumb-item :to="{ path: '/' }">Trang chủ</el-breadcrumb-item>
                     <el-breadcrumb-item><a href="/tin-tuc">Tin tức</a></el-breadcrumb-item>
                 </el-breadcrumb>
             </div>
-        </div>
+        </div> -->
 
         <div class="container">
             <el-row :gutter="0" style="width: 100%;">
@@ -28,10 +28,14 @@
                                 </template>
 
                                 <template #default>
-                                    <img :src="post.thumbnail" alt="">
+                                    <router-link to="/tin-tuc/hello">
+                                        <img :src="post.thumbnail" alt="">
+                                    </router-link>
                                     <span class="item-tag">{{ JSON.parse(post.tags)[0] }}</span>
 
-                                    <p class="item-title">{{ post.title }}</p>
+                                    <router-link to="/tin-tuc/hello">
+                                        <p class="item-title">{{ post.title }}</p>
+                                    </router-link>
 
                                     <p class="item-desc">{{ post.short_desc }}</p>
 
@@ -50,10 +54,9 @@
         </div>
 
 
-        <div class="container pagination" v-if="!loading">
+        <div class="container pagination" v-if="!loading && posts.total != 0">
             <el-pagination background layout="prev, pager, next" :total="posts.total" />
         </div>
-
     </div>
 
     <Footer />
@@ -80,7 +83,7 @@ onMounted(async() => {
     setTimeout(() => {
         Object.assign(posts, data)
         loading.value = false;
-    },400)
+    }, 300)
 })
 </script>
 

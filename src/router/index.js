@@ -30,7 +30,7 @@ export const router = createRouter({
       component: ProductDetail
     },
     {
-      path: '/login',
+      path: '/dang-nhap',
       name: 'login',
       component: Login,
       beforeEnter: () => {
@@ -43,7 +43,7 @@ export const router = createRouter({
       }
     },
     {
-      path: '/signup',
+      path: '/dang-ky',
       name: 'signup',
       component: Signup
     },

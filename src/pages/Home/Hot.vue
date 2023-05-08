@@ -1,21 +1,11 @@
 <template>
   <div class="deal container">
     <el-row :gutter="10">
-      <el-col :xs="8" :sm="6" :md="4" :lg="8" :xl="1">
+      <el-col :xs="8" :sm="6" :md="4" :lg="8" :xl="1" v-for="banner in props.banners">
         <div class="deal-item">
-          <img src="@/assets/sale/01.webp" alt="" />
-        </div>
-      </el-col>
-
-      <el-col :xs="8" :sm="6" :md="4" :lg="8" :xl="1">
-        <div class="deal-item">
-          <img src="@/assets/sale/02.webp" alt="" />
-        </div>
-      </el-col>
-
-      <el-col :xs="8" :sm="6" :md="4" :lg="8" :xl="1">
-        <div class="deal-item">
-          <img src="@/assets/sale/03.webp" alt="" />
+          <router-link :to="{ path: banner.redirect_link }">
+            <img :src="banner.url" alt="" />
+          </router-link>
         </div>
       </el-col>
     </el-row>
@@ -159,5 +149,6 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper";
 const modules = [Navigation];
+const props = defineProps(['banners'])
 </script>
 <style src="./Hot.scss"></style>

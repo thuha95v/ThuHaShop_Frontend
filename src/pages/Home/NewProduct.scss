@@ -51,7 +51,7 @@ body {
     left: 0;
     position: absolute;
     top: 20px;
-    transition: all 0.4s ease 0s;
+    transition: all 0.2s ease 0s;
     width: 100%;
     z-index: 1;
   }
@@ -59,7 +59,8 @@ body {
   .hot-slider-item{
     text-align: center;
     margin: 10px 3px;
-    // box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
 
     &:hover .slider-item-icon{
       opacity: 1;
@@ -68,6 +69,7 @@ body {
 
     &:hover{
       box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+      margin-bottom: -20px;
     }
 
     span{
@@ -89,7 +91,7 @@ body {
       font-size: 18px;
     }
     .slider-item-icon{
-      transition: all 0.3s ease-out 0s;
+      transition: all 0.2s ease-out 0s;
       opacity: 0;
       align-items: center;
       justify-content: center;

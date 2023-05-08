@@ -2,8 +2,8 @@
     <div class="header">
         <div class="container">
             <div class="container flex header-auth">
-                <router-link to="/login">Đăng nhập</router-link>
-                <router-link to="/signup">Đăng ký</router-link>
+                <router-link to="/dang-nhap">Đăng nhập</router-link>
+                <router-link to="/dang-ky">Đăng ký</router-link>
             </div>
         </div>
         <el-divider />
@@ -23,15 +23,17 @@
 
                 <el-badge class="header-badge" :value="12" type="warning">
                     <template #default>
-                        <div class="flex header-card">
-                            <el-icon color="#AB8C74" :size="26">
-                                <Goods />
-                            </el-icon>
-                            <span>5.000.000</span>
-                            <el-icon>
-                                <ArrowDown />
-                            </el-icon>
-                        </div>
+                        <router-link to="/gio-hang">
+                            <div class="flex header-card">
+                                <el-icon color="#AB8C74" :size="26">
+                                    <Goods />
+                                </el-icon>
+                                <span>5.000.000</span>
+                                <el-icon color="#AB8C74">
+                                    <ArrowDown />
+                                </el-icon>
+                            </div>
+                        </router-link>
                     </template>
                 </el-badge>
             </div>

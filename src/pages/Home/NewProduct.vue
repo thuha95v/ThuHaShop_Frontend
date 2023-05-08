@@ -211,4 +211,4 @@ import 'swiper/css/grid';
 
 const modules = [Grid, Navigation];
 </script>
-<style src="./HotProduct.scss"></style>
+<style src="./NewProduct.scss"></style>

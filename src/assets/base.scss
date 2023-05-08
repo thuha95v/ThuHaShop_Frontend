@@ -98,6 +98,14 @@ ul, li {
     max-width: 1140px;
 } */
 
+.el-pagination.is-background .btn-next.is-active, .el-pagination.is-background .btn-prev.is-active, .el-pagination.is-background .el-pager li.is-active{
+  background-color: $wood-color;
+}
+
+.el-pager li:hover{
+  color: $wood-color;
+}
+
 /* RESPONSIVE */
 @media screen and (min-width: 320px) {
   .container {
